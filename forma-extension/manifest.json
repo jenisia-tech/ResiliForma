@@ -1,0 +1,35 @@
+{
+  "id": "resiliforma-forma-copilot",
+  "name": "ResiliForma — Disaster Resilience Co-Pilot",
+  "version": "1.0.0",
+  "description": "Multi-hazard acoustic diffraction, solar thermal microclimate reduction, stormwater runoff routing, and composite disaster resilience scoring for Autodesk Forma.",
+  "publisher": "Smart India Hackathon 2026 / ResiliForma Team",
+  "icon": "https://raw.githubusercontent.com/autodesk-forma/assets/main/icons/leaf-sparkle.svg",
+  "permissions": [
+    "elements:read",
+    "elements:write",
+    "geometry:read",
+    "project:read",
+    "render:write",
+    "scene:read"
+  ],
+  "capabilities": [
+    "analysis",
+    "environmental_simulation",
+    "generative_site_design",
+    "interactive_mitigation"
+  ],
+  "entrypoint": {
+    "type": "panel",
+    "url": "http://localhost:5174",
+    "title": "ResiliForma Co-Pilot",
+    "defaultWidth": 420,
+    "minWidth": 360,
+    "maxWidth": 640
+  },
+  "endpoints": {
+    "backend_analysis": "http://localhost:8000/api/forma/analyze",
+    "sync_webhook": "http://localhost:8000/api/forma/sync",
+    "test_site": "http://localhost:8000/api/forma/test-site"
+  }
+}

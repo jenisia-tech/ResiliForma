@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/formacontrolbar.tsx","./src/components/formasitecanvas.tsx","./src/components/header.tsx","./src/components/payloadinspectormodal.tsx","./src/components/resiliencereport.tsx","./src/services/api.ts","./src/services/formasdk.ts","./src/types/forma.ts"],"version":"5.9.3"}

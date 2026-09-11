@@ -1,0 +1,98 @@
+{
+  "sites": [
+    {
+      "site_id": "demo-site-01",
+      "name": "Coimbatore — Siruvani Road / Karunya Nagar Site",
+      "location": {
+        "city": "Coimbatore",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "latitude": 10.9366,
+        "longitude": 76.7441,
+        "formatted_address": "Karunya Nagar Police Station, Siruvani Road, Madavarayapuram, Coimbatore South, Tamil Nadu 641101"
+      },
+      "area_hectares": 21.04,
+      "building_count": 26,
+      "terrain": {
+        "type": "Mixed / Foothill Valley Slope",
+        "mean_slope_percent": 4.2,
+        "drainage_direction": "North to South-East (Western Ghats Runoff)"
+      },
+      "climate": {
+        "zone": "Tropical Wet & Dry (Aw - Köppen)",
+        "design_temperature_c": 41.0,
+        "peak_monsoon_rainfall_mm_hr": 65.0
+      },
+      "noise": {
+        "source": "Road Traffic (Siruvani Road Arterial Corridor)",
+        "baseline_db": 78.0,
+        "target_db": 65.0
+      },
+      "solar": {
+        "peak_exposure_percent": 82.0,
+        "annual_irradiance_kwh_m2": 1780.0,
+        "critical_façade": "West / South-West"
+      },
+      "hydrology": {
+        "runoff_risk": "Moderate",
+        "peak_precipitation_capacity_mm_hr": 65.0,
+        "proposed_recharge_area_sq_m": 7800.0
+      },
+      "accessibility": {
+        "nearest_essential_facility_minutes": 8.0,
+        "connectivity_status": "Good"
+      },
+      "meta": {
+        "data_source": "Autodesk Forma Live Proposal (Karunya Nagar 26-Block Layout)",
+        "forma_connected": true
+      }
+    },
+    {
+      "site_id": "demo-site-02",
+      "name": "Nilgiris Eco-Catchment",
+      "location": {
+        "city": "Ooty",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "latitude": 11.4102,
+        "longitude": 76.6950,
+        "formatted_address": "Nilgiris District, Tamil Nadu, India"
+      },
+      "area_hectares": 28.5,
+      "building_count": 5,
+      "terrain": {
+        "type": "Hilly / Steep Slope",
+        "mean_slope_percent": 12.8,
+        "drainage_direction": "West to Valley"
+      },
+      "climate": {
+        "zone": "Subtropical Highland (Cfb)",
+        "design_temperature_c": 26.0,
+        "peak_monsoon_rainfall_mm_hr": 95.0
+      },
+      "noise": {
+        "source": "State Highway 15",
+        "baseline_db": 68.0,
+        "target_db": 55.0
+      },
+      "solar": {
+        "peak_exposure_percent": 74.0,
+        "annual_irradiance_kwh_m2": 1540.0,
+        "critical_façade": "South"
+      },
+      "hydrology": {
+        "runoff_risk": "High",
+        "peak_precipitation_capacity_mm_hr": 95.0,
+        "proposed_recharge_area_sq_m": 8500.0
+      },
+      "accessibility": {
+        "nearest_essential_facility_minutes": 14.0,
+        "connectivity_status": "Moderate"
+      },
+      "meta": {
+        "data_source": "Demo Dataset (Synthetic Hill Catchment)",
+        "forma_connected": false
+      }
+    }
+  ]
+}

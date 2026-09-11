@@ -1,0 +1,27 @@
+# Frontend & Extension
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+forma-extension/node_modules/
+forma-extension/dist/
+forma-extension/.env
+forma-extension/.env.*
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.env
+
+# Python
+*.pyc
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
