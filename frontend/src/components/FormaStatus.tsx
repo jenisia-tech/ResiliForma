@@ -214,11 +214,41 @@ export const FormaDetailModal: React.FC<{ onClose: () => void }> = ({ onClose })
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ padding: '0.85rem', background: 'var(--bg-card-muted)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-card)' }}>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-                Live Autodesk Forma Extension Available
+                System Architecture (Decoupled Prototype Model)
               </div>
               <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
-                The standalone Autodesk Forma Extension is located at <code style={{ color: 'var(--cyan-light)' }}>forma-extension/</code> and can run embedded within Autodesk Forma or in browser dev mode at <strong>http://localhost:5174</strong>.
+                ResiliForma operates as an independent multi-hazard spatial analytics co-pilot connecting to Autodesk Forma proposals via a high-performance REST API contract. No paid commercial developer license required.
               </p>
+            </div>
+
+            {/* Visual Pipeline Box */}
+            <div style={{
+              background: '#030712',
+              padding: '0.85rem 1.1rem',
+              borderRadius: 'var(--radius-md)',
+              border: '1px solid rgba(6, 182, 212, 0.25)',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.73rem',
+              lineHeight: '1.6'
+            }}>
+              <div style={{ color: 'var(--cyan-light)', fontWeight: 700, marginBottom: '0.25rem' }}>
+                YOUR RESILIFORMA PLATFORM:
+              </div>
+              <div style={{ color: 'var(--text-main)' }}>
+                React Frontend (Port 5173)<br />
+                &nbsp;&nbsp;↓<br />
+                FastAPI Backend (Port 8000)<br />
+                &nbsp;&nbsp;↓<br />
+                Acoustic (Traffic Diffraction) • Solar (Façade Azimuth) • Hydrology (Runoff & Swales)<br />
+                &nbsp;&nbsp;↓<br />
+                Multi-Objective Pareto Optimization + Climate-Adaptive Recommendations
+              </div>
+              <div style={{ margin: '0.4rem 0', color: 'var(--amber-light)', fontWeight: 600 }}>
+                &nbsp;&nbsp;↕ REST API Data Contract (POST /api/forma/analyze)
+              </div>
+              <div style={{ color: '#a78bfa', fontWeight: 600 }}>
+                AUTODESK FORMA [Integration Stage] — Karunya Nagar, Coimbatore Site (26 Buildings)
+              </div>
             </div>
 
             <div style={{
