@@ -100,13 +100,15 @@ export const FormaDetailModal: React.FC<{ onClose: () => void }> = ({ onClose })
   const [syncStatus, setSyncStatus] = useState<string | null>(null);
   const [isTesting, setIsTesting] = useState(false);
 
+  const API_BASE = import.meta.env.VITE_API_URL || '';
+
   const testApiBridge = async () => {
     setIsTesting(true);
     try {
-      const res = await fetch('http://localhost:8000/api/forma/test-site');
+      const res = await fetch(`${API_BASE}/api/forma/test-site`);
       if (res.ok) {
         const site = await res.json();
-        const analyzeRes = await fetch('http://localhost:8000/api/forma/analyze', {
+        const analyzeRes = await fetch(`${API_BASE}/api/forma/analyze`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(site)
@@ -118,10 +120,10 @@ export const FormaDetailModal: React.FC<{ onClose: () => void }> = ({ onClose })
           setSyncStatus(`API returned HTTP ${analyzeRes.status}`);
         }
       } else {
-        setSyncStatus(`Could not reach /api/forma/test-site (HTTP ${res.status})`);
+        setSyncStatus(`Could not reach ${API_BASE || ''}/api/forma/test-site (HTTP ${res.status})`);
       }
     } catch (err: any) {
-      setSyncStatus(`⚠️ Backend check: ${err.message || 'Make sure FastAPI backend is running on port 8000'}`);
+      setSyncStatus(`⚠️ Backend check: ${err.message || 'Make sure backend is accessible'}`);
     } finally {
       setIsTesting(false);
     }
