@@ -83,7 +83,7 @@ function localAnalyze(req: SiteAnalysisRequest): SiteAnalysisResponse {
       vegetation_attenuation_db: Number(veg_att.toFixed(2)),
       total_reduction_db: Number(total_noise_red.toFixed(2)),
       optimized_noise_db: Number(opt_noise.toFixed(2)),
-      status: opt_noise <= 65 ? 'Optimal (< 65 dBA)' : opt_noise <= 70 ? 'Moderate (65-70 dBA)' : 'High Exposure (> 70 dBA)',
+      status: opt_noise <= 65 ? 'Improved Exposure (< 65 dBA)' : opt_noise <= 70 ? 'Moderate (65-70 dBA)' : 'High Exposure (> 70 dBA)',
       disclaimer: 'Deterministic screening estimate; not a substitute for detailed acoustic simulation.'
     },
     solar: {

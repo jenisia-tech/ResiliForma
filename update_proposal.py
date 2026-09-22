@@ -284,7 +284,7 @@ def build_sih_proposal(target_path="/Users/Chris David/Documents/SIH/SIH Project
         ("Vegetation Buffer Depth (d_v)", "0.0 m (Paved hardscape frontage)", "8.0 m (Dense Native Planting)", "+8.0 m Acoustic Tree Buffer"),
         ("Solar Shading Louvers (d_l)", "0.0 m (Unshaded glazing)", "1.2 m (Horizontal Overhangs)", "+1.2 m Façade Shading"),
         ("SuDS Drainage Infrastructure", "0 m Swales / 0 m³ Retention Basin", "644 m Bioswales / 7,800 m³ Pond", "Integrated SuDS Network"),
-        ("Road Traffic Noise Level", "78.0 dBA (High Exposure)", "62.95 dBA (~63 dBA, Optimal)", "-15.05 dB Total Attenuation"),
+        ("Road Traffic Noise Level", "78.0 dBA (High Exposure)", "62.94 dBA (~63 dBA, Improved Exposure)", "-15.05 dB Total Attenuation"),
         ("Peak Façade Solar Irradiance", "710.0 W/m² (Severe Heat Load)", "482.8 W/m² (~480 W/m², Relieved)", "-32.0% Solar Reduction"),
         ("Stormwater Runoff Management", "10.0% (Severe Runoff Risk)", "82.0% (High Infiltration & Retention)", "+72.0% Retention Efficiency"),
         ("Composite Resilience Score", "48 / 100 (Grade D — Vulnerable)", "87 / 100 (Grade A — Resilient)", "+39 Point Improvement")
@@ -332,7 +332,7 @@ def build_sih_proposal(target_path="/Users/Chris David/Documents/SIH/SIH Project
     doc.add_paragraph("Optimized Noise Level (dBA) = Baseline Noise - A_barrier - A_vegetation", style='Normal')
     add_bullet("Barrier Diffraction Attenuation:", "A_barrier = min(18.0, barrier_height × 3.1) [dB]. For a 3.5m berm: A_barrier = 10.85 dB.")
     add_bullet("Vegetative Buffer Attenuation:", "A_vegetation = min(8.0, (vegetation_depth / 8.0) × 4.2) [dB]. For an 8m dense buffer: A_vegetation = 4.20 dB.")
-    add_bullet("Combined Attenuation:", "Total Reduction = 10.85 + 4.20 = 15.05 dB (~15 dB). Reducing baseline 78 dBA to 62.95 dBA (~63 dBA).")
+    add_bullet("Combined Attenuation:", "Total Reduction = 10.85 + 4.20 = 15.05 dB (~15 dB). Reducing baseline 78 dBA to 62.94 dBA (~63 dBA, Improved Exposure).")
 
     add_h2("5.2. Solar Façade Irradiance Screening Engine")
     doc.add_paragraph(

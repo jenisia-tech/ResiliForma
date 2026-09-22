@@ -29,7 +29,7 @@ def calculate_noise_screening(
 
     # Status classification
     if optimized_noise <= 65.0:
-        status = "Optimal (< 65 dBA)"
+        status = "Improved Exposure (< 65 dBA)"
     elif optimized_noise <= 70.0:
         status = "Moderate (65-70 dBA)"
     else:

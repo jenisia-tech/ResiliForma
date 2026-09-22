@@ -67,7 +67,7 @@ export const ComparisonPanel: React.FC<ComparisonPanelProps> = ({ comparisonData
             <tr style={{ background: 'rgba(255,255,255,0.02)' }}>
               <td><strong>Road Traffic Noise Level</strong></td>
               <td style={{ color: '#ef4444', fontFamily: 'var(--font-mono)' }}>{baseline.noise.optimized_noise_db} dBA (High Exposure)</td>
-              <td style={{ color: '#10b981', fontFamily: 'var(--font-mono)' }}>{resilient.noise.optimized_noise_db} dBA (Optimal)</td>
+              <td style={{ color: '#10b981', fontFamily: 'var(--font-mono)' }}>{resilient.noise.optimized_noise_db} dBA (Improved Exposure)</td>
               <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>-{noise_reduction_gain_db} dB</td>
             </tr>
             <tr style={{ background: 'rgba(255,255,255,0.02)' }}>

@@ -1,0 +1,108 @@
+================================================================================
+SIH 2026 — 5-MINUTE VIDEO DEMONSTRATION SCRIPT (WITH FORMA ARCHITECTURE)
+Project: ResiliForma (SIH26114)
+Topic: Smart City Site Planning using Autodesk Forma Site Design
+Target Duration: ~4:30 to 5:00 Minutes (Word Count: ~490 Words)
+================================================================================
+
+[0:00 - 0:50] PART 1: HOW THE WORKFLOW STARTS IN AUTODESK FORMA
+--------------------------------------------------------------------------------
+(ACTION: Start on ResiliForma dashboard at http://localhost:5173. 
+ Point cursor to Header, SIH26114 badge, and Karunya Nagar Site Overview card.)
+
+"Hello everyone. Welcome to the demonstration of ResiliForma for Smart India 
+Hackathon 2026 under Problem Statement SIH26114.
+
+In smart city planning, architects and urban planners design their initial site 
+in Autodesk Forma. Usually, they create two proposals: a conventional Baseline 
+Proposal and a Resilient Proposal.
+
+Our testbed is the Karunya Nagar Smart City Sector in Coimbatore—a 1.2 square 
+kilometer master plan with 26 building blocks situated right along the busy 
+NH-544 arterial highway."
+
+
+[0:50 - 1:50] PART 2: WHAT RESILIFORMA DOES — CHECKING IF IT'S A GOOD PLAN
+--------------------------------------------------------------------------------
+(ACTION: Click [Baseline Proposal]. Point to the 2.5D SVG Canvas with the 26 
+ buildings and the red/amber hazard cards below.)
+
+"So what does our website do? 
+
+ResiliForma takes the site design and screens it against real-world environmental 
+hazards—highway traffic noise, solar sun heat, and monsoon rain runoff—to tell the 
+planner whether it is a good plan or not.
+
+Looking at the Baseline Proposal, the website immediately identifies that it is 
+NOT a good plan:
+• Traffic noise from the highway produces a severe 78 dBA across buildings.
+• Direct western sun glare generates 710 Watts per square meter of intense heat load.
+• Impervious hardscapes manage only 10% of heavy monsoon rain runoff.
+
+This gives the baseline a low composite score of just 48 out of 100, or Grade D."
+
+
+[1:50 - 3:00] PART 3: GENERATING THE OPTIMIZED RESILIENT PLAN
+--------------------------------------------------------------------------------
+(ACTION: Click [Resilient Proposal] or move the live sliders: Barrier to 3.5m, 
+ Vegetation to 8m, Louver to 1.2m, Orientation to -18°. Watch the SVG canvas 
+ update live with the berm, trees, rotated parcels, bioswales, and retention pond.)
+
+"Since the baseline plan fails these environmental checks, ResiliForma generates 
+an optimized plan built according to all the required site conditions.
+
+The planner can explore or apply these interventions directly through our controls:
+• We add a 3.5-meter acoustic earth berm and an 8-meter native tree buffer, cutting 
+  noise by 15 dB down to 62.94 dBA for Improved Exposure.
+• We rotate building façades by -18 degrees and add 1.2-meter shading louvers, 
+  reducing direct solar heat by 32% down to 482 Watts per square meter.
+• For heavy monsoon rainfall, we integrate 644 meters of bioswales and a 7,800 cubic 
+  meter retention pond, raising stormwater management to 82%.
+
+With these interventions, ResiliForma elevates the site to a Grade A score of 
+87 out of 100—an improvement of +39 resilience points!"
+
+
+[3:00 - 3:50] PART 4: PROPOSAL COMPARISON MATRIX
+--------------------------------------------------------------------------------
+(ACTION: Scroll down to the Proposal Comparison Matrix table. Highlight the 
+ side-by-side delta rows and point to the Forma Board integration card.)
+
+"ResiliForma gives planners a side-by-side Proposal Comparison Matrix. It shows 
+the exact difference between the unmitigated baseline and the resilient design.
+
+This gives city planners transparent, mathematical proof to justify why the 
+resilient plan is better before construction begins. This comparison aligns 
+directly with Autodesk Forma Board for team collaboration."
+
+
+[3:50 - 5:00] PART 5: FORMA INTEGRATION ARCHITECTURE & 3D GENERATION
+--------------------------------------------------------------------------------
+(ACTION: Scroll to the Forma Integration Panel showing the Adapter Flow and 
+ 8/8 Verified Checklist, then switch tab to the Autodesk Forma 3D site model.)
+
+"Now, how does ResiliForma connect to Autodesk Forma?
+
+Under the hood, ResiliForma uses a decoupled Adapter Pattern. For our demonstration, 
+it runs in a zero-dependency Demo Mode with pre-normalized Karunya Nagar site context. 
+This guarantees 100% reliable local evaluation without depending on cloud API tokens.
+
+In production, this same adapter embeds directly inside Autodesk Forma via its Web SDK 
+iframe, reading live 3D parcel selections automatically.
+
+Once the user selects the optimal resilient plan from our website, Autodesk Forma 
+generates the complete 3D site design step-by-step. 
+
+Forma remains the primary platform where native simulations—like Sun Hours, Daylight, 
+Wind Microclimate, and Embodied Carbon—are verified and exported to Revit BIM.
+
+ResiliForma ensures planners make climate-resilient decisions from day one.
+
+Thank you!"
+
+================================================================================
+RECORDING TIPS:
+1. Open http://localhost:5173 fullscreen.
+2. Have your Autodesk Forma 3D model open in an adjacent browser tab for the 4:00 transition.
+3. Speak clearly at a relaxed, steady pace (~100 words/min).
+================================================================================
