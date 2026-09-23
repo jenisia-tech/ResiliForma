@@ -11,6 +11,19 @@ export const ComparisonPanel: React.FC<ComparisonPanelProps> = ({ comparisonData
 
   const { baseline, resilient, delta_score, noise_reduction_gain_db, solar_reduction_gain_percent, stormwater_management_gain_percent } = comparisonData;
 
+  const baseOri = baseline.solar.orientation_offset_deg;
+  const resOri = resilient.solar.orientation_offset_deg;
+  const baseBerm = baseline.noise.barrier_height_m;
+  const resBerm = resilient.noise.barrier_height_m;
+  const baseVeg = baseline.noise.vegetation_depth_m;
+  const resVeg = resilient.noise.vegetation_depth_m;
+  const baseLouver = baseline.solar.louver_depth_m;
+  const resLouver = resilient.solar.louver_depth_m;
+  const baseSwale = baseline.stormwater.bioswale_length_m;
+  const resSwale = resilient.stormwater.bioswale_length_m;
+  const baseRet = baseline.stormwater.retention_capacity_m3;
+  const resRet = resilient.stormwater.retention_capacity_m3;
+
   return (
     <div className="card" id="comparison-section">
       <div className="card-header">
@@ -36,32 +49,32 @@ export const ComparisonPanel: React.FC<ComparisonPanelProps> = ({ comparisonData
           <tbody>
             <tr>
               <td><strong>Façade Solar Orientation</strong></td>
-              <td>0° (Direct West Exposure)</td>
-              <td>-18° (Deflected Solar Azimuth)</td>
-              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>-18° Offset</td>
+              <td>{baseOri}° ({baseOri === 0 ? 'Direct West Exposure' : 'Baseline Azimuth'})</td>
+              <td>{resOri}° ({resOri < 0 ? 'Deflected Solar Azimuth' : 'Offset'})</td>
+              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>{resOri - baseOri}° Offset</td>
             </tr>
             <tr>
               <td><strong>Acoustic Earth Berm</strong></td>
-              <td>0.0 m (None)</td>
-              <td>3.5 m (Engineered Earth Berm)</td>
-              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+3.5 m</td>
+              <td>{baseBerm.toFixed(1)} m {baseBerm === 0 ? '(None)' : ''}</td>
+              <td>{resBerm.toFixed(1)} m (Engineered Berm)</td>
+              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+{(resBerm - baseBerm).toFixed(1)} m</td>
             </tr>
             <tr>
               <td><strong>Native Vegetation Buffer</strong></td>
-              <td>0.0 m (None)</td>
-              <td>8.0 m (Dense Acoustic Planting)</td>
-              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+8.0 m</td>
+              <td>{baseVeg.toFixed(1)} m {baseVeg === 0 ? '(None)' : ''}</td>
+              <td>{resVeg.toFixed(1)} m (Acoustic Planting)</td>
+              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+{(resVeg - baseVeg).toFixed(1)} m</td>
             </tr>
             <tr>
               <td><strong>Solar Shading Louvers</strong></td>
-              <td>0.0 m (Unshaded Façades)</td>
-              <td>1.2 m (Horizontal Shading Overhangs)</td>
-              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+1.2 m</td>
+              <td>{baseLouver.toFixed(1)} m {baseLouver === 0 ? '(Unshaded)' : ''}</td>
+              <td>{resLouver.toFixed(1)} m (Shading Overhangs)</td>
+              <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>+{(resLouver - baseLouver).toFixed(1)} m</td>
             </tr>
             <tr>
               <td><strong>Bioswales & Retention Pond</strong></td>
-              <td>0 m Swales / 0 m³ Retention</td>
-              <td>644 m Swales / 7,800 m³ Pond</td>
+              <td>{baseSwale.toFixed(0)}m Swales / {baseRet.toLocaleString()}m³ Basin</td>
+              <td>{resSwale.toFixed(0)}m Swales / {resRet.toLocaleString()}m³ Basin</td>
               <td style={{ textAlign: 'right', color: '#10b981', fontWeight: 600 }}>Full SuDS</td>
             </tr>
             <tr style={{ background: 'rgba(255,255,255,0.02)' }}>

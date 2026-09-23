@@ -1,23 +1,27 @@
 import React from 'react';
-import { ShieldCheck, AlertTriangle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, AlertTriangle, ArrowRight, FileText } from 'lucide-react';
 
 interface ProposalSelectorProps {
   selectedProposal: 'baseline' | 'resilient';
   onSelectProposal: (proposal: 'baseline' | 'resilient') => void;
   compositeScore: number;
   grade: string;
+  onOpenReviewAudit?: () => void;
+  deltaScore?: number;
 }
 
 export const ProposalSelector: React.FC<ProposalSelectorProps> = ({
   selectedProposal,
   onSelectProposal,
   compositeScore,
-  grade
+  grade,
+  onOpenReviewAudit,
+  deltaScore = 39
 }) => {
   return (
     <div className="card" style={{ padding: '0.85rem 1.25rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Active Proposal:
           </span>
@@ -56,10 +60,22 @@ export const ProposalSelector: React.FC<ProposalSelectorProps> = ({
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <div style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
-            Current Status: <strong style={{ color: grade === 'A' ? '#10b981' : '#ef4444' }}>Grade {grade} ({compositeScore}/100)</strong>
+            Current Status: <strong style={{ color: grade === 'A' ? '#10b981' : grade === 'B' ? '#38bdf8' : '#ef4444' }}>Grade {grade} ({compositeScore}/100)</strong>
           </div>
+
+          {onOpenReviewAudit && (
+            <button 
+              className="btn btn-secondary"
+              style={{ padding: '0.45rem 0.85rem', fontSize: '0.8rem' }}
+              onClick={onOpenReviewAudit}
+            >
+              <FileText size={14} style={{ color: '#38bdf8' }} />
+              <span>Full Screening Audit</span>
+            </button>
+          )}
+
           {selectedProposal === 'baseline' ? (
             <button 
               className="btn btn-success" 
@@ -71,7 +87,7 @@ export const ProposalSelector: React.FC<ProposalSelectorProps> = ({
             </button>
           ) : (
             <span className="badge badge-emerald" style={{ padding: '0.4rem 0.8rem' }}>
-              +39 Resilience Points Achieved
+              +{deltaScore > 0 ? deltaScore : 39} Resilience Points Achieved
             </span>
           )}
         </div>

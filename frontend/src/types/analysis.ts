@@ -108,3 +108,79 @@ export interface ProposalCompareResponse {
   stormwater_management_gain_percent: number;
   summary: string;
 }
+
+export interface BuildingParcel {
+  id: string;
+  name: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  floors: number;
+  orientation_offset?: number;
+  louver_depth?: number;
+  use_type?: 'commercial' | 'residential' | 'civic' | 'educational' | 'industrial' | 'mixed';
+}
+
+export interface CustomSiteDesign {
+  id: string;
+  site_info: DemoSiteInfo;
+  buildings: BuildingParcel[];
+  baseline_parameters: SiteAnalysisRequest;
+  resilient_parameters?: SiteAnalysisRequest;
+  custom_image_overlay?: string | null;
+  uploaded_file_name?: string;
+  uploaded_format?: 'json' | 'geojson' | 'csv' | 'image' | 'preset';
+  image_analysis_summary?: {
+    file_name: string;
+    detected_blocks: number;
+    density_label: string;
+    footprint_coverage_percent: number;
+    transit_corridor_exposure: string;
+    solar_exposure_profile: string;
+    impervious_runoff_risk: string;
+    key_findings: string[];
+    description: string;
+  };
+  created_at: string;
+}
+
+export interface VulnerabilityItem {
+  id: string;
+  hazard: 'noise' | 'solar' | 'stormwater' | 'spatial';
+  severity: 'critical' | 'moderate' | 'low';
+  title: string;
+  description: string;
+  metric_value: string;
+  threshold_reference: string;
+  affected_parcels?: string[];
+  suggested_fix: string;
+}
+
+export interface DesignReviewAudit {
+  design_id: string;
+  site_name: string;
+  timestamp: string;
+  composite_score: number;
+  grade: string;
+  grade_label: string;
+  status_color: string;
+  compliance: {
+    noise_compliant: boolean;
+    solar_compliant: boolean;
+    stormwater_compliant: boolean;
+    noise_standard_note: string;
+    solar_standard_note: string;
+    stormwater_standard_note: string;
+  };
+  vulnerabilities: VulnerabilityItem[];
+  recommendations: string[];
+  sub_scores: SubScores;
+  parcel_stats: {
+    total_parcels: number;
+    frontline_noise_exposed: number;
+    high_solar_exposed: number;
+    avg_floors: number;
+  };
+}
+
