@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, Info, Image as ImageIcon, Sparkles, Building, X, Volume2, Sun, Droplets, Eye } from 'lucide-react';
+import { Layers, Image as ImageIcon, Sparkles, Building, X } from 'lucide-react';
 import { SiteAnalysisRequest, SiteAnalysisResponse, BuildingParcel } from '../types/analysis';
 import { KARUNYA_BUILDINGS } from '../integrations/designParser';
 

@@ -14,8 +14,7 @@ import {
   Layers,
   ArrowRight,
   Activity,
-  Scan,
-  ShieldAlert
+  Scan
 } from 'lucide-react';
 import { CustomSiteDesign } from '../types/analysis';
 import {
@@ -23,7 +22,6 @@ import {
   parseGeoJsonDesign,
   parseCsvDesign,
   screenDesignImage,
-  createDesignFromImage,
   generateSampleJsonTemplate,
   generateSampleCsvTemplate,
   SITE_PRESETS

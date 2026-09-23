@@ -11,8 +11,6 @@ import {
   Droplets,
   CheckCircle,
   XCircle,
-  Building2,
-  Layers,
   Printer
 } from 'lucide-react';
 import {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droplets, ArrowDownRight, Waves, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Droplets, Waves, ShieldCheck, AlertCircle } from 'lucide-react';
 import { StormwaterAnalysisResult } from '../types/analysis';
 
 interface StormwaterPanelProps {

@@ -8,10 +8,6 @@ import {
   Building,
   FileText,
   UploadCloud,
-  Maximize2,
-  CheckCircle2,
-  AlertTriangle,
-  Layers,
   Eye,
   X
 } from 'lucide-react';
